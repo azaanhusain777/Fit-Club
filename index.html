@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitPulse - Fitness Club</title>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+header {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+nav {
+  background-color: #34495e;
+  text-align: center;
+  padding: 10px;
+}
+nav a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+section {
+  padding: 20px;
+}
+.grid {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  width: 250px;
+  margin: 15px;
+  text-align: center;
+  padding: 15px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.card img {
+  width: 200px;
+  height: 130px;
+  border-radius: 5px;
+}
+.card h3 {
+  margin: 10px 0;
+  color: #2c3e50;
+}
+.card p {
+  line-height: 1.3;
+}
+.schedule, .plans {
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+}
+button {
+  background-color: #e67e22;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+button:hover {
+  background-color: #d35400;
+}
+form {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  max-width: 400px;
+  margin: auto;
+}
+form label {
+  display: block;
+  margin-top: 10px;
+  font-weight: bold;
+}
+form input, form select, form button {
+  width: 100%;
+  padding: 10px;
+  margin: 8px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin-top: 20px;
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>FitPulse</h1>
+  <p>Train smart, feel strong</p>
+</header>
+
+<nav>
+  <a href="#classes">Class Schedules</a>
+  <a href="#trainers">Trainers</a>
+  <a href="#plans">Membership Plans</a>
+  <a href="#blog">Fitness Blog</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<main>
+<!-- Class Schedules Section -->
+<section id="classes" class="schedule">
+  <h2>Class Schedules</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="C:\Users\azaan\Desktop\College Acad\Web Dev\Experiments\fit club\yoga.jpeg" alt="Yoga Class">
+      <h3>Morning Yoga</h3>
+      <p>Mon, Wed, Fri — 6:30 AM</p>
+      <button onclick="enroll('Morning Yoga')">Enroll</button>
+    </div>
+    <div class="card">
+      <img src="C:\Users\azaan\Desktop\College Acad\Web Dev\Experiments\fit club\hiit.jpeg" alt="HIIT Class">
+      <h3>HIIT Blast</h3>
+      <p>Tue, Thu — 7:30 PM</p>
+      <button onclick="enroll('HIIT Blast')">Enroll</button>
+    </div>
+    <div class="card">
+      <img src="C:\Users\azaan\Desktop\College Acad\Web Dev\Experiments\fit club\download.jpeg" alt="Zumba Class">
+      <h3>Zumba Groove</h3>
+      <p>Sat — 5:00 PM</p>
+      <button onclick="enroll('Zumba Groove')">Enroll</button>
+    </div>
+  </div>
+</section>
+
+<!-- Trainer Profiles Section -->
+<section id="trainers">
+  <h2>Trainer Profiles</h2>
+  <div class="grid">
+    <div class="card">
+      <img src="C:\Users\azaan\Desktop\College Acad\Web Dev\Experiments\fit club\download (1).jpeg" alt="Trainer Aisha">
+      <h3>Aisha Khan</h3>
+      <p>Certified Yoga Instructor, 6+ years experience.</p>
+      <button onclick="viewTrainer('Aisha Khan')">View Profile</button>
+    </div>
+    <div class="card">
+      <img src="C:\Users\azaan\Desktop\College Acad\Web Dev\Experiments\fit club\download (3).jpeg" alt="Trainer Rohan">
+      <h3>Rohan Mehta</h3>
+      <p>Strength & Conditioning Coach, CSCS.</p>
+      <button onclick="viewTrainer('Rohan Mehta')">View Profile</button>
+    </div>
+    <div class="card">
+      <img src="C:\Users\azaan\Desktop\College Acad\Web Dev\Experiments\fit club\download (2).jpeg" alt="Trainer Neha">
+      <h3>Neha Sharma</h3>
+      <p>Zumba & Dance Fitness Specialist.</p>
+      <button onclick="viewTrainer('Neha Sharma')">View Profile</button>
+    </div>
+  </div>
+</section>
+
+<!-- Membership Plans Section -->
+<section id="plans" class="plans">
+  <h2>Membership Plans</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>Monthly</h3>
+      <p>Access to all classes, locker, and shower.</p>
+      <button onclick="choosePlan('Monthly')">Choose</button>
+    </div>
+    <div class="card">
+      <h3>Quarterly</h3>
+      <p>Save more with 3-month access + nutrition consult.</p>
+      <button onclick="choosePlan('Quarterly')">Choose</button>
+    </div>
+    <div class="card">
+      <h3>Annual</h3>
+      <p>Best value, priority booking, and wellness workshops.</p>
+      <button onclick="choosePlan('Annual')">Choose</button>
+    </div>
+  </div>
+
+  <form action="membership.jsp" method="post">
+    <label for="name">Your Name:</label>
+    <input type="text" id="name" name="name" required>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="plan">Select Plan:</label>
+    <select id="plan" name="plan" required>
+      <option value="Monthly">Monthly</option>
+      <option value="Quarterly">Quarterly</option>
+      <option value="Annual">Annual</option>
+    </select>
+    <button type="submit">Join FitPulse</button>
+  </form>
+</section>
+
+<!-- Fitness Blog Section -->
+<section id="blog">
+  <h2>Fitness Tips</h2>
+  <div class="grid">
+    <div class="card">
+      <h3>5 Warm-up Moves You Shouldn’t Skip</h3>
+      <p>Activate key muscle groups to reduce injury risk and improve performance.</p>
+      <button onclick="likePost('Warm-up Moves')">Like</button>
+    </div>
+    <div class="card">
+      <h3>Beginner’s Guide to Strength Training</h3>
+      <p>Focus on form, progressive overload, and recovery for steady gains.</p>
+      <button onclick="likePost('Strength Guide')">Like</button>
+    </div>
+    <div class="card">
+      <h3>Nutrition Basics for Active Days</h3>
+      <p>Balance carbs, protein, and hydration to fuel your workouts.</p>
+      <button onclick="likePost('Nutrition Basics')">Like</button>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: hello@fitpulse.com</p>
+  <p>Phone: +91 9876543210</p>
+</section>
+</
